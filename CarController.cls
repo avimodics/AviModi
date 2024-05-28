@@ -56,22 +56,7 @@ global class CarController {
         List<Car_Details__c> carDetails = [Select Name, Car_Price__c, Car_Description__c, Car_Image__c 
                                            FROM Car_Details__c 
                                            WHERE  Car_Price__c =: budget AND Car_Brand__c =: brand AND Car_Type__c =:carType];
-       /* for(Car_Details__c camp : carDetails) {
-            System.debug('Rich field:');
-            System.debug(camp.Car_Image__c);
-            if(camp.Car_Image__c != null) {
-                String firstSubString = camp.Car_Image__c.substringBetween('<img', 'img>');
-                System.debug('First substring: ' + firstSubString);
-                
-                String secondSubString = firstSubString.substringBetween('src="', '"');
-                System.debug('Second substring: ' + secondSubString);
-                
-                String link = secondSubString.replace('amp;', '');
-                link = 'https://gearguard-dev-ed.develop.file.force.com/'+link;
-                System.debug('Link: ' + link);
-                camp.Car_Image__c = link;
-            }
-        }*/
+     
         return carDetails;
             
        
